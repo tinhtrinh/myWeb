@@ -1,0 +1,29 @@
+{
+  "name": "vinoco-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --inspect src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "file-saver": "^2.0.5",
+    "file-system": "^2.2.2",
+    "html-docx-js": "^0.3.1",
+    "mammoth": "^1.4.17",
+    "nedb": "^1.8.0",
+    "node-stream-zip": "^1.14.0",
+    "nodemon": "^2.0.15",
+    "pdfreader": "^1.2.10",
+    "superagent": "^6.1.0",
+    "utf8": "^3.0.0",
+    "xlsx": "^0.17.0"
+  }
+}
