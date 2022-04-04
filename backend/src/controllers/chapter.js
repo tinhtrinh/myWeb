@@ -61,3 +61,5 @@ module.exports.addChapter = async (req, res) => {
         }
     })
 }
+
+module.exports.test = (req, res) => { res.send("test") }
