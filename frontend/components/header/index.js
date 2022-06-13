@@ -5,8 +5,6 @@ import Logo from './logo';
 import Search from './search';
 import SectionDesktop from './section-desktop';
 import SectionMobile from './section-mobile';
-import ProfileMenu from './profile-menu';
-import MobileMenu from './mobile-menu';
 
 const Header = () => {
   const classes = useStyles();
@@ -22,9 +20,6 @@ const Header = () => {
           <SectionMobile/>
         </Toolbar>
       </AppBar>
-        
-      <ProfileMenu />
-      <MobileMenu/>
     </div>
   )
 }

@@ -18,7 +18,6 @@ const Layout = ({ children, title = 'Novel Comic Web' }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <body>
         <Header/>
         <SideMenu/>
         <SignIn/>
@@ -26,8 +25,7 @@ const Layout = ({ children, title = 'Novel Comic Web' }) => {
         <main className={styles.main}>
           { children }
         </main>
-      </body>
-
+      
       <footer className={styles.footer}>
         Copyright 2021 - tinhto
       </footer>

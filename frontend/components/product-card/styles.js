@@ -6,11 +6,20 @@ const useStyles = makeStyles({
       marginBottom: 20,
     },
     media: {
-      height: 140,
-      width: 280
+      height: 280,
+      width: 280,
     },
     alignCenter: {
       margin: 'auto'
+    },
+    absolutePosition: {
+      position: 'absolute',
+      top: 200,
+      width: "100%",
+      background: 'rgba(255, 255, 255, 0.8)'
+    },
+    text: {
+      color: '#000000'
     }
   });
 

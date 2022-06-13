@@ -1,19 +1,8 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from "next/dist/client/router"
 
 import { Menu, MenuItem } from '@material-ui/core';
 
-import { setProfileMenuRef } from '../../../store/actions/menuActions';
-
-const ProfileMenu = () => {
-  const profileMenuRef = useSelector(state => state.menu.profileMenuRef);
-
-  const dispatch = useDispatch();
-  const handleMenuClose = () => {
-    dispatch(setProfileMenuRef({ ref: null }))
-  };
-
+const ProfileMenu = ({anchorEl, handleCloseProfileMenu}) => {
   const router = useRouter();
   const onRedirect = (url) => {
     router.push({
@@ -21,21 +10,21 @@ const ProfileMenu = () => {
     },
     undefined,
     { shallow: true })
-    handleMenuClose();
+    handleCloseProfileMenu;
   }
 
   return (
     <Menu
-      anchorEl={profileMenuRef}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       id='profile-menu'
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={Boolean(profileMenuRef)}
-      onClose={handleMenuClose}
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      transformOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      anchorEl={anchorEl} 
+      open={ Boolean(anchorEl)}
+      onClose={handleCloseProfileMenu}
     > 
       <MenuItem onClick={() => onRedirect('/account')}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleCloseProfileMenu}>My account</MenuItem>
     </Menu>
   )
 };

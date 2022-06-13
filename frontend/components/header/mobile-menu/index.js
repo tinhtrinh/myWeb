@@ -1,29 +1,18 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
 import { Menu, MenuItem, IconButton, Badge } from '@material-ui/core';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
-import { setMobileMenuRef } from '../../../store/actions/menuActions';
-
-const MobileMenu = () => {
-  const mobileMenuRef = useSelector(state => state.menu.mobileMenuRef)
-
-  const dispatch = useDispatch();
-  const handleMobileMenuClose = () => {
-    dispatch(setMobileMenuRef({ ref: null }))
-  };
-
+const MobileMenu = ({anchorEl, handleMobileMenuClose}) => {
   return (
     <Menu
-      anchorEl={mobileMenuRef}
+      anchorEl={anchorEl}
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       id="mobile-menu"
       keepMounted
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={Boolean(mobileMenuRef)}
+      open={Boolean(anchorEl)}
       onClose={handleMobileMenuClose}
     >
       <MenuItem>

@@ -1,7 +1,8 @@
+import * as React from 'react';
 import { useSelector } from 'react-redux';
 import Link from 'next/dist/client/link';
 
-import {Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography} from '@material-ui/core';
+import {Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, Popover} from '@material-ui/core';
 
 import useStyles from './styles';
 
@@ -10,7 +11,23 @@ const ProductCard = ({ product }) => {
 
   const classes = useStyles();
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [test, settest] = React.useState(false);
+
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+    settest(true)
+  };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+    settest(false)
+  };
+
+  const open = Boolean(anchorEl);
+
   return (
+    <div>
     <Card className={classes.root}>
       <Link
           key={_id}
@@ -24,19 +41,22 @@ const ProductCard = ({ product }) => {
           className={classes.media}
           image={thumb}
           title="Contemplative Reptile"
+          onMouseEnter={handlePopoverOpen}
+          onMouseLeave={handlePopoverClose}
         />
         
-        <CardContent overflow="hidden">
-          <Typography gutterBottom variant="h5" component="h2">
+        <CardContent className={classes.absolutePosition} overflow="hidden">
+          <Typography className={classes.text} gutterBottom variant="h5" component="h2">
             {name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography className={classes.text} variant="body2" color="textSecondary" component="p">
             {type} - {author}
           </Typography>
         </CardContent>
         
       </CardActionArea>
       </Link>
+
       <CardActions>
       <Link href ={{
         pathname: '/chapter/[_id]',
@@ -47,7 +67,40 @@ const ProductCard = ({ product }) => {
         </Button>
         </Link>
       </CardActions>
+
+      
     </Card>
+
+    <Typography
+        aria-owns={open ? 'mouse-over-popover' : undefined}
+        aria-haspopup="true"
+        onMouseEnter={handlePopoverOpen}
+        onMouseLeave={handlePopoverClose}
+      >
+        Hover with a Popover.
+      </Typography>
+
+    <Popover
+        id="mouse-over-popover"
+        sx={{
+          pointerEvents: 'none',
+        }}
+        open={open}
+        anchorEl={anchorEl}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        onClose={handlePopoverClose}
+        disableRestoreFocus
+      >
+        <Typography sx={{ p: 1 }}>I use Popover.</Typography>
+      </Popover>
+    </div>
   );
 }
 
