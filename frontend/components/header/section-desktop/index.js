@@ -11,7 +11,6 @@ import { setOpenSignIn } from '../../../store/actions/userActions';
 
 import ProfileMenu from '../profile-menu';
 
-
 const SectionDesktop = () => {
   const classes = useStyles();
 
@@ -45,18 +44,21 @@ const SectionDesktop = () => {
         </Badge>
       </IconButton>
       <IconButton
+        id="avatar-button"
         edge="end"
         aria-label="account of current user"
-        aria-controls='profile-menu'
+        aria-controls={Boolean(anchorEl) ? 'profile-menu' : undefined}
         aria-haspopup="true"
-        onClick={handleOpenProfileMenu}
+        aria-expanded={Boolean(anchorEl) ? 'true' : undefined}
         color="inherit"
+        onClick={handleOpenProfileMenu}
       >
         <AccountCircle />
       </IconButton>
 
       <ProfileMenu anchorEl={anchorEl} handleCloseProfileMenu={handleCloseProfileMenu}/>
-    </div>)
+    </div>
+  ) 
 
   // if(account._id) {
   //   return (

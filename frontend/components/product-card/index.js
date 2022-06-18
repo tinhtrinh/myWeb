@@ -2,26 +2,24 @@ import * as React from 'react';
 import { useSelector } from 'react-redux';
 import Link from 'next/dist/client/link';
 
-import {Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, Popover} from '@material-ui/core';
+import {Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, Popover, Popper} from '@material-ui/core';
 
+import ProductPopper from '../product-popper';
 import useStyles from './styles';
 
 const ProductCard = ({ product }) => {
-  const {_id, name, type, genre, status, author, thumb, newest, newestName} = product;
+  const {_id, name, type, genre, status, author, thumb, newest, newestName, intro} = product;
 
   const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [test, settest] = React.useState(false);
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
-    settest(true)
   };
 
   const handlePopoverClose = () => {
     setAnchorEl(null);
-    settest(false)
   };
 
   const open = Boolean(anchorEl);
@@ -41,6 +39,7 @@ const ProductCard = ({ product }) => {
           className={classes.media}
           image={thumb}
           title="Contemplative Reptile"
+          aria-owns={open ? 'mouse-over-popover' : undefined}
           onMouseEnter={handlePopoverOpen}
           onMouseLeave={handlePopoverClose}
         />
@@ -68,38 +67,9 @@ const ProductCard = ({ product }) => {
         </Link>
       </CardActions>
 
-      
     </Card>
 
-    <Typography
-        aria-owns={open ? 'mouse-over-popover' : undefined}
-        aria-haspopup="true"
-        onMouseEnter={handlePopoverOpen}
-        onMouseLeave={handlePopoverClose}
-      >
-        Hover with a Popover.
-      </Typography>
-
-    <Popover
-        id="mouse-over-popover"
-        sx={{
-          pointerEvents: 'none',
-        }}
-        open={open}
-        anchorEl={anchorEl}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-        onClose={handlePopoverClose}
-        disableRestoreFocus
-      >
-        <Typography sx={{ p: 1 }}>I use Popover.</Typography>
-      </Popover>
+    <ProductPopper product={product} anchorEl={anchorEl} handlePopoverClose={handlePopoverClose} />
     </div>
   );
 }

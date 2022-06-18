@@ -17,11 +17,12 @@ const ProfileMenu = ({anchorEl, handleCloseProfileMenu}) => {
     <Menu
       id='profile-menu'
       keepMounted
-      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-      transformOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       anchorEl={anchorEl} 
       open={ Boolean(anchorEl)}
       onClose={handleCloseProfileMenu}
+      MenuListProps={{
+        'aria-labelledby': 'avatar-button',
+      }}
     > 
       <MenuItem onClick={() => onRedirect('/account')}>Profile</MenuItem>
       <MenuItem onClick={handleCloseProfileMenu}>My account</MenuItem>
