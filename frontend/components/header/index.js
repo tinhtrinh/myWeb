@@ -17,7 +17,7 @@ const Header = () => {
           <Search/>
           <div className={classes.grow} />
           <SectionDesktop />
-          <SectionMobile/>
+          {/* <SectionMobile/> */}
         </Toolbar>
       </AppBar>
     </div>

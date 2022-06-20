@@ -2,7 +2,7 @@ import { alpha, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     sectionDesktop: {
-      display: 'none',
+      display: 'flex',
       [theme.breakpoints.up('md')]: {
         display: 'flex',
       },
