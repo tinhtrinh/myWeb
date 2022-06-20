@@ -20,7 +20,7 @@ const Layout = ({ children, title = 'Novel Comic Web' }) => {
 
         <Header/>
         <SideMenu/>
-        <SignIn/>
+        {/* <SignIn/> */}
 
         <main className={styles.main}>
           { children }

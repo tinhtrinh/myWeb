@@ -10,6 +10,7 @@ import useStyles from './styles';
 import { setOpenSignIn } from '../../../store/actions/userActions';
 
 import ProfileMenu from '../profile-menu';
+import SignIn from '../../sign-in';
 
 const SectionDesktop = () => {
   const classes = useStyles();
@@ -31,34 +32,34 @@ const SectionDesktop = () => {
     setAnchorEl(null);
   } 
 
-  return (
-    <div className={classes.sectionDesktop}>
-      <IconButton aria-label="show 4 new mails" color="inherit">
-        <Badge badgeContent={4} color="secondary">
-          <MailIcon />
-        </Badge>
-      </IconButton>
-      <IconButton aria-label="show 17 new notifications" color="inherit">
-        <Badge badgeContent={17} color="secondary">
-          <NotificationsIcon />
-        </Badge>
-      </IconButton>
-      <IconButton
-        id="avatar-button"
-        edge="end"
-        aria-label="account of current user"
-        aria-controls={Boolean(anchorEl) ? 'profile-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={Boolean(anchorEl) ? 'true' : undefined}
-        color="inherit"
-        onClick={handleOpenProfileMenu}
-      >
-        <AccountCircle />
-      </IconButton>
+  // return (
+  //   <div className={classes.sectionDesktop}>
+  //     <IconButton aria-label="show 4 new mails" color="inherit">
+  //       <Badge badgeContent={4} color="secondary">
+  //         <MailIcon />
+  //       </Badge>
+  //     </IconButton>
+  //     <IconButton aria-label="show 17 new notifications" color="inherit">
+  //       <Badge badgeContent={17} color="secondary">
+  //         <NotificationsIcon />
+  //       </Badge>
+  //     </IconButton>
+  //     <IconButton
+  //       id="avatar-button"
+  //       edge="end"
+  //       aria-label="account of current user"
+  //       aria-controls={Boolean(anchorEl) ? 'profile-menu' : undefined}
+  //       aria-haspopup="true"
+  //       aria-expanded={Boolean(anchorEl) ? 'true' : undefined}
+  //       color="inherit"
+  //       onClick={handleOpenProfileMenu}
+  //     >
+  //       <AccountCircle />
+  //     </IconButton>
 
-      <ProfileMenu anchorEl={anchorEl} handleCloseProfileMenu={handleCloseProfileMenu}/>
-    </div>
-  ) 
+  //     <ProfileMenu anchorEl={anchorEl} handleCloseProfileMenu={handleCloseProfileMenu}/>
+  //   </div>
+  // ) 
 
   // if(account._id) {
   //   return (
@@ -87,16 +88,17 @@ const SectionDesktop = () => {
   //     </div>
   //   )
   // } else {
-  //   return (
-  //     <div className={classes.sectionDesktop}>
-  //         <Button size="large" onClick={handleOpenSignIn}>
-  //           Đăng nhập
-  //         </Button>
-  //         <Button size="large">
-  //           Đăng ký
-  //         </Button>
-  //     </div>
-  //   )
+    return (
+      <div className={classes.sectionDesktop}>
+          <Button size="large" onClick={handleOpenSignIn}>
+            Đăng nhập
+          </Button>
+          <Button size="large">
+            Đăng ký
+          </Button>
+          <SignIn/>
+      </div>
+    )
   // }
 }
 
