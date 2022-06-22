@@ -17,7 +17,7 @@ const Logo = () => {
 
     return (
         <div className={classes.grow}>
-            <IconButton
+            {/* <IconButton
                 edge="start"
                 className={classes.menuButton}
                 color="inherit"
@@ -25,7 +25,7 @@ const Logo = () => {
                 onClick={openSideMenu}
             >
                 <MenuIcon />
-            </IconButton>
+            </IconButton> */}
 
             <Link href='/'>
                 <Typography className={classes.title} variant="h6" noWrap>

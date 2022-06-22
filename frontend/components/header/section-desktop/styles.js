@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
     sectionDesktop: {
       display: 'flex',
       [theme.breakpoints.up('md')]: {
-        display: 'flex',
+        display: 'flex'
       },
     },
   }));
