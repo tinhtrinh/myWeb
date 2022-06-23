@@ -4,7 +4,7 @@ import {Card, CardContent, CardMedia, Typography, Popper} from '@material-ui/cor
 
 import useStyles from './styles';
 
-const ProductPopper = ({ product, anchorEl, handlePopoverClose }) => {
+const ProductPopper = ({ product, anchorEl, handlePopperClose }) => {
   const {_id, name, type, genre, status, author, thumb, newest, newestName, intro} = product;
 
   const classes = useStyles();
@@ -18,7 +18,7 @@ const ProductPopper = ({ product, anchorEl, handlePopoverClose }) => {
         id="mouse-over-popover"
         open={open}
         anchorEl={anchorEl}
-        onClose={handlePopoverClose}
+        onClose={handlePopperClose}
         disableRestoreFocus
         placement="right"
       >

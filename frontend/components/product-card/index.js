@@ -14,11 +14,11 @@ const ProductCard = ({ product }) => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handlePopoverOpen = (event) => {
+  const handlePopperOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handlePopoverClose = () => {
+  const handlePopperClose = () => {
     setAnchorEl(null);
   };
 
@@ -40,8 +40,8 @@ const ProductCard = ({ product }) => {
           image={thumb}
           title="Contemplative Reptile"
           aria-owns={open ? 'mouse-over-popover' : undefined}
-          onMouseEnter={handlePopoverOpen}
-          onMouseLeave={handlePopoverClose}
+          onMouseEnter={handlePopperOpen}
+          onMouseLeave={handlePopperClose}
         />
         
         <CardContent className={classes.absolutePosition} overflow="hidden">
@@ -69,7 +69,7 @@ const ProductCard = ({ product }) => {
 
     </Card>
 
-    <ProductPopper product={product} anchorEl={anchorEl} handlePopoverClose={handlePopoverClose} />
+    <ProductPopper product={product} anchorEl={anchorEl} handlePopoverClose={handlePopperClose} />
     </div>
   );
 }
