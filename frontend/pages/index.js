@@ -1,12 +1,14 @@
 import Layout from '../layouts/Main';
-import ChapterCard from '../components/chapter-card';
+import MostViewChapterList from '../components/most-view-chapter-list';
 import ProductList from '../components/product-list';
+
+import Divider from '@material-ui/core/Divider';
 
 export default function Home() {
   return (
     <Layout>
-      <ChapterCard/>
-
+      <MostViewChapterList/>
+      <br/>
       <ProductList/>
     </Layout>
   )

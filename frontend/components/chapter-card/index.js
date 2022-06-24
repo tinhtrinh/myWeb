@@ -6,8 +6,9 @@ import { Button, Card, CardContent, CardMedia, Box, Typography, IconButton } fro
 import useStyles from './styles';
 import ProductPopper from '../product-popper';
 
-var product = { name: "Truyện 1", thumb: "https://imagepi.otakuscan.net/Extend3/Manga/12/b555c485-b699-4420-8016-804c8aa91ab1_mini.jpeg", type: "Tiểu thuyết ngắn", genre: "Học đường", status: "Đang tiến hành", athorID: "KnESx6LhyMVCMYHg", author: "tinhto", intro: "My first novel", newest: "zHdJzpZAHbA3MVL1", newestName: "Chương 1", rating: 10, _id: "0BJHH30z9CTqkoQH" }
-const ChapterCard = () => {
+const ChapterCard = ({ chapter, index }) => {
+    const {_id, name, type, genre, status, author, thumb, newest, newestName, intro} = chapter;
+
     const classes = useStyles();
 
     const [anchorEl, setAnchorEl] = useState(null);
@@ -29,22 +30,22 @@ const ChapterCard = () => {
                 <Card className={classes.card}>
                     <CardContent>
                         <Typography component="p" variant="h5">
-                            1
+                           {index + 1}
                         </Typography>
                     </CardContent>
                     <CardMedia
                         className={classes.thumbnail}
                         component="img"
-                        image="https://imagepi.otakuscan.net/Extend3/Manga/12/b555c485-b699-4420-8016-804c8aa91ab1_mini.jpeg"
+                        image={thumb}
                         alt="Live from space album cover"
                     />
                 </Card>
                 <Typography component="p" variant="h7">
-                    Chapter 1
+                    {newestName}
                 </Typography>
             </div>
 
-            <ProductPopper product={product} anchorEl={anchorEl} handlePopperClose={handlePopperClose} />
+            <ProductPopper product={chapter} anchorEl={anchorEl} handlePopperClose={handlePopperClose} />
         </Button>
     )
 }
