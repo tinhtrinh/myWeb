@@ -5,6 +5,7 @@ import Logo from './logo';
 import Search from './search';
 import SectionDesktop from './section-desktop';
 import SectionMobile from './section-mobile';
+import SideMenu from './side-menu';
 
 const Header = () => {
   const classes = useStyles();
@@ -13,6 +14,7 @@ const Header = () => {
     <div className={classes.grow}>
       <AppBar>
         <Toolbar>
+          <SideMenu/>
           <Logo/>
           <Search/>
           <div className={classes.grow} />

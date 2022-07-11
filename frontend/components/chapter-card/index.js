@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-import { Button, Card, CardContent, CardMedia, Box, Typography, IconButton } from '@material-ui/core';
+import { Button, Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 
 import useStyles from './styles';
 import ProductPopper from '../product-popper';
@@ -40,7 +40,7 @@ const ChapterCard = ({ chapter, index }) => {
                         alt="Live from space album cover"
                     />
                 </Card>
-                <Typography component="p" variant="h7">
+                <Typography component="p" variant="subtitle1">
                     {newestName}
                 </Typography>
             </div>

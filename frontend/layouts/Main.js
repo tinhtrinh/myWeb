@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 
 import styles from '../styles/Home.module.css'
 import Header from '../components/header';
-import SideMenu from '../components/side-menu';
 
 const Layout = ({ children, title = 'Novel Comic Web' }) => {
   const router = useRouter();
@@ -18,7 +17,6 @@ const Layout = ({ children, title = 'Novel Comic Web' }) => {
       </Head>
 
         <Header/>
-        <SideMenu/>
 
         <main className={styles.main}>
           { children }

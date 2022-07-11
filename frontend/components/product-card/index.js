@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useSelector } from 'react-redux';
 import Link from 'next/dist/client/link';
 
-import {Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, Popover, Popper} from '@material-ui/core';
+import {Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography} from '@material-ui/core';
 
 import ProductPopper from '../product-popper';
 import useStyles from './styles';

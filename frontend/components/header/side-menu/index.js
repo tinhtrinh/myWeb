@@ -4,6 +4,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
+import MenuIcon from '@material-ui/icons/Menu';
 
 import useStyles from './styles';
 
@@ -21,13 +22,13 @@ const SideMenu = () => {
   return (
     <div>
       <IconButton
+        variant="contained"
         edge="start"
-        className={classes.menuButton}
         color="inherit"
         aria-label="open drawer"
         onClick={handleOpenSideMenu}
       >
-        <MenuOpenIcon />
+        <MenuIcon />
       </IconButton>
       <Drawer
         className={classes.drawer}
