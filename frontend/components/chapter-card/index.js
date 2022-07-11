@@ -22,6 +22,12 @@ const ChapterCard = ({ chapter, index }) => {
     };
 
     return (
+        <Link
+          key={_id}
+          href={{
+            pathname: '/chapter/[_id]',
+            query: { _id }
+          }}>
         <Button
             onMouseEnter={handlePopperOpen}
             onMouseLeave={handlePopperClose}
@@ -47,6 +53,7 @@ const ChapterCard = ({ chapter, index }) => {
 
             <ProductPopper product={chapter} anchorEl={anchorEl} handlePopperClose={handlePopperClose} />
         </Button>
+        </Link>
     )
 }
 
