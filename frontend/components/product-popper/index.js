@@ -32,20 +32,24 @@ const ProductPopper = ({ product, anchorEl, handlePopperClose }) => {
         />
         
         <CardContent overflow="hidden">
-          <Typography className={classes.text} gutterBottom variant="h5" component="h2">
-            {name}
+          <Typography className={classes.text} gutterBottom variant="h5" component="h5">
+          {type}: {name}
           </Typography>
           <Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-            {type} - {author}
+            Author: {author}
           </Typography>
           <Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-            {status}
+            Status: {status}
+          </Typography>
+        </CardContent>
+        <CardContent>
+        <Typography className={classes.text} gutterBottom variant="h5" component="h5">
+          Introduction:
           </Typography>
           <Typography className={classes.text} variant="body2" color="textSecondary" component="p">
             {intro}
           </Typography>
-          </CardContent>
-
+        </CardContent>
         </Card>
       </Popper>
     </div>

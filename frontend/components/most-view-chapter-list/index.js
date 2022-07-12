@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Card, CardContent, Chip, Grid } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
 
 import { fetchProductsList } from '../../store/actions/productsListActions';
 
@@ -22,16 +23,15 @@ const MostViewChapterList = () => {
     // }, [])
 
     return (
-        <Card>
-            <CardContent>
-                <Chip label="Most View" color="primary" />
-            </CardContent>
-            <CardContent>
+        <Container>
+            
+                <Chip label="Most View Of The Day" color="primary" />
+            
+            
                 <Grid className={classes.root} container justifyContent="space-evenly" alignItems="center">
                     {chaptersList.map((chapter, index) => (<ChapterCard key={chapter._id} chapter={chapter} index={index} />))}
                 </Grid>
-            </CardContent>
-        </Card>
+        </Container>
     )
 }
 

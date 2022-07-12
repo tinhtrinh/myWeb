@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Card, CardContent, Chip, Grid } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
 
 import { fetchProductsList } from '../../store/actions/productsListActions';
 
@@ -19,16 +20,12 @@ const ProductList = () => {
     // }, [])
 
     return (
-        <Card>
-            <CardContent>
+        <Container>
                 <Chip label="Lasted Update" color="primary" />
-            </CardContent>
-            <CardContent>
         <Grid container justifyContent="space-evenly" alignItems="center">
             {productsList.map((product) => (<ProductCard key={product._id} product={product}/>))}
         </Grid>
-        </CardContent>
-        </Card>
+        </Container>
     )
 }
 
