@@ -10,7 +10,14 @@ import { fetchChaptersList } from "../../store/actions/chaptersListActions";
 
 const ChapterList = ({ pid }) => {
     const classes = useStyles();
-    const chaptersList = useSelector(state => state.chaptersList.chaptersList);
+    // const chaptersList = useSelector(state => state.chaptersList.chaptersList);
+    const chaptersList = [
+        {_id: 1, name: "Chapter 1"}, 
+        {_id: 2, name: "Chapter 2"}, 
+        {_id: 3, name: "Chapter 3"}, 
+        {_id: 4, name: "Chapter 4"}, 
+        {_id: 5, name: "Chapter 5"}
+    ]
 
     const dispatch = useDispatch();
     useEffect(() => {
