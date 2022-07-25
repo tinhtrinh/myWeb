@@ -8,16 +8,11 @@ import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TableContain
 import { setOpenChaptersList, fetchChaptersList } from "../../store/actions/chaptersListActions";
 import { fetchChapterDetail } from '../../store/actions/chapterDetailActions';
 
-const ChapterListDialog = ({ pid }) => {
+const ChapterListDialog = ({ pid, isChapterListOpen, handleCloseChapterList }) => {
     const { chaptersList, openChapterList } = useSelector(state => state.chaptersList)
     
     const dispatch = useDispatch();
-    const handleClose = () => {
-        dispatch(
-            setOpenChaptersList({ status: false })
-        )
-    }
-
+    
     const router = useRouter();
     const onChangeChapter = (id) => {
         router.push({
@@ -27,7 +22,7 @@ const ChapterListDialog = ({ pid }) => {
         undefined,
         { shallow: true })
         dispatch(fetchChapterDetail(id));
-        handleClose();
+        handleCloseChapterList();
     }
 
     useEffect(() => {
@@ -36,8 +31,8 @@ const ChapterListDialog = ({ pid }) => {
 
     return (
         <Dialog
-            open={openChapterList}
-            onClose={handleClose}
+            open={isChapterListOpen}
+            onClose={handleCloseChapterList}
             fullWidth={true}
             scroll="paper"
             aria-labelledby="scroll-dialog-title"
@@ -70,11 +65,11 @@ const ChapterListDialog = ({ pid }) => {
                     pathname: '/product/[_id]',
                     query: { _id: pid }
                 }}>
-                    <Button color="primary" onClick={handleClose}>
+                    <Button color="primary" onClick={handleCloseChapterList}>
                         Xem thông tin truyện
                     </Button>
                 </Link>
-                <Button color="primary" onClick={handleClose}>
+                <Button color="primary" onClick={handleCloseChapterList}>
                     Hủy bỏ
                 </Button>
             </DialogActions>

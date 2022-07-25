@@ -7,7 +7,7 @@ import useStyles from './styles';
 import ProductPopper from '../product-popper';
 
 const ChapterCard = ({ chapter, index }) => {
-    const {_id, name, type, genre, status, author, thumb, newest, newestName, intro} = chapter;
+    const { _id, name, type, genre, status, author, thumb, newest, newestName, intro } = chapter;
 
     const classes = useStyles();
 
@@ -23,36 +23,36 @@ const ChapterCard = ({ chapter, index }) => {
 
     return (
         <Link
-          key={_id}
-          href={{
-            pathname: '/chapter/[_id]',
-            query: { _id }
-          }}>
-        <Button
-            onMouseEnter={handlePopperOpen}
-            onMouseLeave={handlePopperClose}
-        >
-            <div className={classes.root}>
-                <Card className={classes.card}>
-                    <CardContent>
-                        <Typography component="p" variant="h5">
-                           {index + 1}
-                        </Typography>
-                    </CardContent>
-                    <CardMedia
-                        className={classes.thumbnail}
-                        component="img"
-                        image={thumb}
-                        alt="Live from space album cover"
-                    />
-                </Card>
-                <Typography component="p" variant="subtitle1">
-                    {newestName}
-                </Typography>
-            </div>
+            key={_id}
+            href={{
+                pathname: '/chapter/[_id]',
+                query: { _id }
+            }}>
+            <Button
+                onMouseEnter={handlePopperOpen}
+                onMouseLeave={handlePopperClose}
+            >
+                <div className={classes.root}>
+                    <Card className={classes.card}>
+                        <CardContent>
+                            <Typography component="p" variant="h5">
+                                {index + 1}
+                            </Typography>
+                        </CardContent>
+                        <CardMedia
+                            className={classes.thumbnail}
+                            component="img"
+                            image={thumb}
+                            alt="Live from space album cover"
+                        />
+                    </Card>
+                    <Typography component="p" variant="subtitle1">
+                        {newestName}
+                    </Typography>
+                </div>
 
-            <ProductPopper product={chapter} anchorEl={anchorEl} handlePopperClose={handlePopperClose} />
-        </Button>
+                <ProductPopper product={chapter} anchorEl={anchorEl} handlePopperClose={handlePopperClose} />
+            </Button>
         </Link>
     )
 }
