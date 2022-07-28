@@ -26,7 +26,7 @@ const Header = (props) => {
         </AppBar>
       </Slide>
 
-      <Toolbar />
+      <Toolbar id="back-to-top-anchor" />
     </div>
   )
 }

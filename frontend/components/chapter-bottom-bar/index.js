@@ -5,6 +5,7 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 import useStyles from './styles';
 import ChapterAction from '../chapter-action';
+import GoTopButton from '../go-top-button';
 
 const ChapterBottomBar = () => {
     const classes = useStyles();
@@ -17,7 +18,7 @@ const ChapterBottomBar = () => {
                     <IconButton><InfoIcon/></IconButton>
                     <ChapterAction />
                     <IconButton><FavoriteBorderIcon/></IconButton>
-                    <IconButton><ArrowUpwardIcon/></IconButton>
+                    <GoTopButton />
                 </Toolbar>
             </AppBar>
         </Slide>
