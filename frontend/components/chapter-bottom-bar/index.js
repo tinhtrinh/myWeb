@@ -1,10 +1,9 @@
 import { Slide, useScrollTrigger, AppBar, Toolbar, IconButton } from '@material-ui/core';
 import InfoIcon from '@material-ui/icons/Info';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 import useStyles from './styles';
 import ChapterAction from '../chapter-action';
+import FavoriteButton from '../favorite-button';
 import GoTopButton from '../go-top-button';
 
 const ChapterBottomBar = () => {
@@ -17,7 +16,7 @@ const ChapterBottomBar = () => {
                 <Toolbar>
                     <IconButton><InfoIcon/></IconButton>
                     <ChapterAction />
-                    <IconButton><FavoriteBorderIcon/></IconButton>
+                    <FavoriteButton />
                     <GoTopButton />
                 </Toolbar>
             </AppBar>

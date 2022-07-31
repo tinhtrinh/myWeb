@@ -6,6 +6,7 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 
 import useStyles from "./styles";
+import FavoriteButton from '../favorite-button';
 import ChapterList from '../chapter-list';
 
 const ProductDetail = ({ pid }) => {
@@ -22,9 +23,11 @@ const ProductDetail = ({ pid }) => {
                         alt="green iguana"
                         image={product.thumb}
                     />
+
+                    <FavoriteButton title="Click to add favorite" />
+                    
                     <CardContent>
                         <Table aria-label="simple table">
-
                             <TableBody>
                                 <TableRow>
                                     <TableCell component="th" scope="row">Other Name</TableCell>
