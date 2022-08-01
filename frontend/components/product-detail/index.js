@@ -60,28 +60,28 @@ const ProductDetail = ({ pid }) => {
                     <CardContent>
                         <Typography gutterBottom variant="h4" component="div">{product.name}</Typography>
                         
-                        <Box className={classes.flexBox}>
-                            <Box className={classes.textCenter}>
-                                <Box className={classes.flexBox}>
+                        <div className={classes.flexBox}>
+                            <div className={classes.textCenter}>
+                                <div className={classes.flexBox}>
                                     <StarIcon fontSize="large" color="primary" />
                                     <Typography gutterBottom variant="h5" component="div">10/10</Typography>
-                                </Box>
-                                <Box className={classes.contentCenter}>
+                                </div>
+                                <div className={classes.contentCenter}>
                                     <PersonIcon color="primary" />
                                     <Typography>900 votes</Typography>
-                                </Box>
-                            </Box>
+                                </div>
+                            </div>
                             <Divider flexItem orientation="vertical" />
-                            <Box className={classes.textCenter}>
+                            <div className={classes.textCenter}>
                                 <VisibilityIcon fontSize="large" />
                                 <Typography>100</Typography>
-                            </Box>
+                            </div>
                             <Divider flexItem orientation="vertical" />
-                            <Box className={classes.textCenter}>
+                            <div className={classes.textCenter}>
                                 <LocalLibraryIcon fontSize="large" />
                                 <Typography>100</Typography>
-                            </Box>
-                        </Box>
+                            </div>
+                        </div>
                     </CardContent>
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">Genre</Typography>

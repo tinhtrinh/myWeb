@@ -6,6 +6,19 @@ import MailIcon from '@material-ui/icons/Mail';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import HomeIcon from '@material-ui/icons/Home';
+import LabelIcon from '@material-ui/icons/Label';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
+
+import HistoryIcon from '@material-ui/icons/History';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import CreateIcon from '@material-ui/icons/Create';
+
+import SettingsIcon from '@material-ui/icons/Settings';
+import FlagIcon from '@material-ui/icons/Flag';
+import HelpIcon from '@material-ui/icons/Help';
+import ReportIcon from '@material-ui/icons/Report';
+
 import useStyles from './styles';
 
 const SideMenu = () => {
@@ -30,6 +43,7 @@ const SideMenu = () => {
       >
         <MenuIcon />
       </IconButton>
+
       <Drawer
         className={classes.drawer}
         anchor="left"
@@ -46,21 +60,52 @@ const SideMenu = () => {
         </div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+            <ListItem button >
+              <ListItemIcon><HomeIcon /></ListItemIcon>
+              <ListItemText primary="Home" />
             </ListItem>
-          ))}
+            <ListItem button >
+              <ListItemIcon><LabelIcon /></ListItemIcon>
+              <ListItemText primary="Genre" />
+            </ListItem>
+            <ListItem button >
+              <ListItemIcon><MenuBookIcon /></ListItemIcon>
+              <ListItemText primary="Type" />
+            </ListItem>
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+            <ListItem button>
+              <ListItemIcon><FavoriteIcon /></ListItemIcon>
+              <ListItemText primary="Favorite" />
             </ListItem>
-          ))}
+            <ListItem button>
+              <ListItemIcon><HistoryIcon /></ListItemIcon>
+              <ListItemText primary="History" />
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon><CreateIcon /></ListItemIcon>
+              <ListItemText primary="Your Product" />
+            </ListItem>
+        </List>
+        <Divider />
+        <List>
+            <ListItem button>
+              <ListItemIcon><SettingsIcon /></ListItemIcon>
+              <ListItemText primary="Settings" />
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon><FlagIcon /></ListItemIcon>
+              <ListItemText primary="Report History" />
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon><HelpIcon /></ListItemIcon>
+              <ListItemText primary="Help" />
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon><ReportIcon /></ListItemIcon>
+              <ListItemText primary="Report" />
+            </ListItem>
         </List>
       </Drawer>
     </div>

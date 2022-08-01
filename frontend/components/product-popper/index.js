@@ -19,7 +19,6 @@ const ProductPopper = ({ product, anchorEl, handlePopperClose }) => {
         open={open}
         anchorEl={anchorEl}
         onClose={handlePopperClose}
-        disableRestoreFocus
         placement="right"
       >
         <Card className={classes.root}>
