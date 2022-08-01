@@ -1,5 +1,5 @@
 import { Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
-import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow, Box, Paper } from '@material-ui/core';
+import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow, Box, Paper, Divider } from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
 import PersonIcon from '@material-ui/icons/Person';
 import VisibilityIcon from '@material-ui/icons/Visibility';
@@ -25,7 +25,7 @@ const ProductDetail = ({ pid }) => {
                     />
 
                     <FavoriteButton title="Click to add favorite" />
-                    
+                    <Divider />
                     <CardContent>
                         <Table aria-label="simple table">
                             <TableBody>
@@ -55,10 +55,11 @@ const ProductDetail = ({ pid }) => {
                 </Card>
             </Grid>
 
-            <Grid item direction="column" xs spacing={2}>
+            <Grid item xs>
                 <Card>
                     <CardContent>
                         <Typography gutterBottom variant="h4" component="div">{product.name}</Typography>
+                        
                         <Box className={classes.flexBox}>
                             <Box className={classes.textCenter}>
                                 <Box className={classes.flexBox}>
@@ -70,12 +71,12 @@ const ProductDetail = ({ pid }) => {
                                     <Typography>900 votes</Typography>
                                 </Box>
                             </Box>
-
+                            <Divider flexItem orientation="vertical" />
                             <Box className={classes.textCenter}>
                                 <VisibilityIcon fontSize="large" />
                                 <Typography>100</Typography>
                             </Box>
-
+                            <Divider flexItem orientation="vertical" />
                             <Box className={classes.textCenter}>
                                 <LocalLibraryIcon fontSize="large" />
                                 <Typography>100</Typography>
@@ -84,10 +85,12 @@ const ProductDetail = ({ pid }) => {
                     </CardContent>
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">Genre</Typography>
+                        <Divider />
                         <Typography>{product.genre}</Typography>
                     </CardContent>
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">Introduction</Typography>
+                        <Divider />
                         <Typography>{product.intro}</Typography>
                     </CardContent>
                 </Card>

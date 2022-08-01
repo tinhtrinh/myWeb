@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Card, CardContent, CardMedia, Typography, Popper} from '@material-ui/core';
+import {Card, CardContent, CardMedia, Typography, Popper, Divider} from '@material-ui/core';
 
 import useStyles from './styles';
 
@@ -46,6 +46,7 @@ const ProductPopper = ({ product, anchorEl, handlePopperClose }) => {
         <Typography className={classes.text} gutterBottom variant="h5" component="h5">
           Introduction:
           </Typography>
+          <Divider />
           <Typography className={classes.text} variant="body2" color="textSecondary" component="p">
             {intro}
           </Typography>
