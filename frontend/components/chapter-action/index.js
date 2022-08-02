@@ -7,11 +7,13 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import ListIcon from '@material-ui/icons/List';
 
+import useStyles from "./styles";
 import { fetchChapterDetail } from "../../store/actions/chapterDetailActions";
 import { setOpenChaptersList } from "../../store/actions/chaptersListActions";
 import ChapterListDialog from "../chapter-list-dialog";
 
 const ChapterAction = ({ backID, nextID }) => {
+    const classes = useStyles();
     const router = useRouter();
     const dispatch = useDispatch();
     const onChangeChapter = (id) => {
@@ -19,8 +21,8 @@ const ChapterAction = ({ backID, nextID }) => {
             pathname: '/chapter/[_id]',
             query: { _id: id }
         },
-        undefined,
-        { shallow: true })
+            undefined,
+            { shallow: true })
         dispatch(fetchChapterDetail(id));
     }
 
@@ -34,22 +36,22 @@ const ChapterAction = ({ backID, nextID }) => {
     }
 
     return (
-        <div>
+        <div className={classes.grow}>
             <IconButton onClick={() => onChangeChapter(backID)}>
-                <NavigateBeforeIcon fontSize="large"/>
-                Chương trước
+                <NavigateBeforeIcon fontSize="large" />
+                <div className={classes.title}>Previous Chapter   </div>
             </IconButton>
 
             <IconButton onClick={handleOpenChapterList}>
-                <ListIcon fontSize="large"/>
+                <ListIcon fontSize="large" />
             </IconButton>
 
             <IconButton onClick={() => onChangeChapter(nextID)}>
-                Chương sau
-                <NavigateNextIcon fontSize="large"/>
+                <div className={classes.title}>Next Chapter </div>
+                <NavigateNextIcon fontSize="large" />
             </IconButton>
 
-            <ChapterListDialog isChapterListOpen={isChapterListOpen} handleCloseChapterList={handleCloseChapterList}/>
+            <ChapterListDialog isChapterListOpen={isChapterListOpen} handleCloseChapterList={handleCloseChapterList} />
         </div>
     )
 }
