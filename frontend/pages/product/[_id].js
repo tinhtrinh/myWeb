@@ -2,12 +2,8 @@ import { useEffect } from "react";
 import { useRouter } from "next/dist/client/router";
 import { useSelector, useDispatch } from "react-redux";
 
-import { Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
-import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow, Box } from '@material-ui/core';
-
 import Layout from "../../layouts/Main";
 import ProductDetail from "../../components/product-detail";
-import ChapterList from "../../components/chapter-list";
 
 import { fetchProductDetail } from "../../store/actions/productDetailActions";
 
@@ -30,7 +26,6 @@ const Product = () => {
         return (
             <Layout>
                 <ProductDetail />
-                {/* <ChapterList pid={_id} /> */}
             </Layout>)
     }
 }

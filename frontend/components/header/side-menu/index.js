@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import Link from 'next/dist/client/link';
+
 import { Drawer, List, ListItem, ListItemIcon, ListItemText, Divider, IconButton } from '@material-ui/core';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
@@ -60,52 +62,61 @@ const SideMenu = () => {
         </div>
         <Divider />
         <List>
-            <ListItem button >
-              <ListItemIcon><HomeIcon /></ListItemIcon>
-              <ListItemText primary="Home" />
-            </ListItem>
+          <ListItem button >
+            <ListItemIcon><HomeIcon /></ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItem>
+          <Link href={{
+            pathname: '/genre'
+          }}>
             <ListItem button >
               <ListItemIcon><LabelIcon /></ListItemIcon>
               <ListItemText primary="Genre" />
             </ListItem>
+          </Link>
+
+          <Link href={{
+            pathname: '/genre'
+          }}>
             <ListItem button >
               <ListItemIcon><MenuBookIcon /></ListItemIcon>
               <ListItemText primary="Type" />
             </ListItem>
+          </Link>
         </List>
         <Divider />
         <List>
-            <ListItem button>
-              <ListItemIcon><FavoriteIcon /></ListItemIcon>
-              <ListItemText primary="Favorite" />
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon><HistoryIcon /></ListItemIcon>
-              <ListItemText primary="History" />
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon><CreateIcon /></ListItemIcon>
-              <ListItemText primary="Your Product" />
-            </ListItem>
+          <ListItem button>
+            <ListItemIcon><FavoriteIcon /></ListItemIcon>
+            <ListItemText primary="Favorite" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon><HistoryIcon /></ListItemIcon>
+            <ListItemText primary="History" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon><CreateIcon /></ListItemIcon>
+            <ListItemText primary="Your Product" />
+          </ListItem>
         </List>
         <Divider />
         <List>
-            <ListItem button>
-              <ListItemIcon><SettingsIcon /></ListItemIcon>
-              <ListItemText primary="Settings" />
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon><FlagIcon /></ListItemIcon>
-              <ListItemText primary="Report History" />
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon><HelpIcon /></ListItemIcon>
-              <ListItemText primary="Help" />
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon><ReportIcon /></ListItemIcon>
-              <ListItemText primary="Report" />
-            </ListItem>
+          <ListItem button>
+            <ListItemIcon><SettingsIcon /></ListItemIcon>
+            <ListItemText primary="Settings" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon><FlagIcon /></ListItemIcon>
+            <ListItemText primary="Report History" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon><HelpIcon /></ListItemIcon>
+            <ListItemText primary="Help" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon><ReportIcon /></ListItemIcon>
+            <ListItemText primary="Report" />
+          </ListItem>
         </List>
       </Drawer>
     </div>
