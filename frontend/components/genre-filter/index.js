@@ -35,7 +35,22 @@ const GenreFilter = () => {
             <FormControl component="fieldset" className={classes.formControl}>
                 <FormLabel component="legend">Genres: </FormLabel>
                 <FormGroup>
-                <List component="nav" aria-label="main mailbox folders">
+                    <ul>
+                    {
+                        [0, 1, 2, 32, 4, 5, 6, 7, 8, 99, 100, 500].map((i) => {
+                            return (
+                                <GenreItem key={i} name={"Thể loại dài nhất " + i}/>
+                                // <Grid item xs={4}>
+                                // <FormControlLabel key={i}
+                                //     control={<Checkbox checked={gilad} onChange={handleChange} name="gilad" />}
+                                //     label="Gilad Gray"
+                                // />
+                                // </Grid>
+                            )
+                        })
+                    }
+                    </ul>
+                {/* <List component="nav" aria-label="main mailbox folders">
                 {
                         [0, 1, 2, 32, 4, 5, 6, 7, 8, 99, 100, 500].map((i) => {
                             return (
@@ -49,7 +64,7 @@ const GenreFilter = () => {
                             )
                         })
                     }
-                </List>
+                </List> */}
                     {/* <Grid container justifyContent="flex-start" alignItems="center" spacing={1}>
                     {
                         [0, 1, 2, 32, 4, 5, 6, 7, 8, 99, 100].map((i) => {
